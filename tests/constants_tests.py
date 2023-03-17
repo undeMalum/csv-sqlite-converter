@@ -1,7 +1,8 @@
 from pathlib import Path
 
-# db connection
 TESTS_DIR_PATH = Path(__file__).absolute().parent
+
+# db connection
 DATABASE = TESTS_DIR_PATH.joinpath("example_files/example_db-faces.db")
 
 # csv connection

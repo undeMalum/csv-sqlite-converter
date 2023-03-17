@@ -2,8 +2,8 @@ from pathlib import Path
 
 import pytest
 
-from tests.constants_tests import DATABASE
-from src.validation import db_input_validation
+from .constants_tests import DATABASE
+from csv_sqlite_converter.validation import db_input_validation
 
 
 @pytest.mark.dbvalidation

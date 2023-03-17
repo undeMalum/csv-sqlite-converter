@@ -1,12 +1,8 @@
-from pathlib import Path
-
 import pytest
 
-from src.sqlite_to_csv import (
-    transfer_data_from_sqlite_to_csv,
-    files_paths
-)
-from tests.constants_tests import (
+from csv_sqlite_converter.sqlite_to_csv import transfer_data_from_sqlite_to_csv
+from .constants_tests import (
+    TESTS_DIR_PATH,
     DATABASE,
     FACES_TABLE_CONTENT,
     FACES_TABLE_COLUMNS,
@@ -35,17 +31,17 @@ def test_fetch_data_from_sqlite(table, exp_content, exp_columns):
 
 
 @pytest.mark.sqlitecsv
-@pytest.mark.parametrize("path, exp_path", [
-    (Path("test/test.txt"), files_paths.GENERATED_CSVS_DIR_PATH.joinpath("test")),
-    (Path("test/text2.txt"), files_paths.GENERATED_CSVS_DIR_PATH.joinpath("text2"))
+@pytest.mark.parametrize("db_path, exp_path", [
+    (TESTS_DIR_PATH.joinpath("test/test.db"), TESTS_DIR_PATH.joinpath("test")),
+    (TESTS_DIR_PATH.joinpath("test/text2.db"), TESTS_DIR_PATH.joinpath("text2"))
 ])
-def test_create_csv_files_dir(path, exp_path):
-    generated_path = transfer_data_from_sqlite_to_csv.create_csv_files_dir(path)
+def test_create_csv_files_dir(db_path, exp_path):
+    generated_path = transfer_data_from_sqlite_to_csv.create_csv_files_dir(db_path, TESTS_DIR_PATH)
 
     assert generated_path == exp_path
 
 
 @pytest.mark.sqlitecsv
-def rm_dir():
-    Path(files_paths.GENERATED_CSVS_DIR_PATH.joinpath("test")).rmdir()
-    Path(files_paths.GENERATED_CSVS_DIR_PATH.joinpath("text2")).rmdir()
+def test_rm_dir_not_an_actual_test():
+    TESTS_DIR_PATH.joinpath("test").rmdir()
+    TESTS_DIR_PATH.joinpath("text2").rmdir()

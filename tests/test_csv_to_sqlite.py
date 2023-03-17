@@ -1,6 +1,6 @@
 import pytest
 
-from src.csv_to_sqlite import transfer_data_from_csv_to_sqlite
+from csv_sqlite_converter.csv_to_sqlite import transfer_data_from_csv_to_sqlite
 
 
 @pytest.mark.csvsqlite
