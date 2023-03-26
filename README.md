@@ -4,7 +4,7 @@ The CSV-SQLite Convert allows to store data both from SQLite database in csv fil
 ## Installation
 You can install CSV-SQLite Converter from PyPi (in the future).
     
-    python -m pip install csv_sqlite_converter
+    python -m pip install csv-sqlite-converter
 
 The converter supports Python 3.10 and higher.
 
