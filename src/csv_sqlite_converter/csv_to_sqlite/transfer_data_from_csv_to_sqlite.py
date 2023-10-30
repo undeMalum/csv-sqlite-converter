@@ -1,9 +1,9 @@
 from pathlib import Path
 
-from ..validation import db_input_validation
-from ..context_managers.db_manager import SQLite
-from ..context_managers.csv_managers import CSVReader
-from .input_checks import check_input_and_insert_into_db
+from csv_sqlite_converter.validation import db_input_validation
+from csv_sqlite_converter.context_managers.db_manager import SQLite
+from csv_sqlite_converter.context_managers.csv_managers import CSVReader
+from csv_sqlite_converter.csv_to_sqlite.input_checks import check_input_and_insert_into_db
 
 
 def construct_query(table: str, fieldnames: list[str]) -> str:

@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from ..context_managers.db_manager import SQLite
-from ..context_managers.csv_managers import CSVWriter
+from csv_sqlite_converter.context_managers.db_manager import SQLite
+from csv_sqlite_converter.context_managers.csv_managers import CSVWriter
 
 
 def fetch_tables(database_path: Path) -> list[str]:

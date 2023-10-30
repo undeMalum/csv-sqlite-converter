@@ -1,8 +1,8 @@
 from pathlib import Path
 
-from .sqlite_to_csv.transfer_data_from_sqlite_to_csv import db_mode
-from .csv_to_sqlite.transfer_data_from_csv_to_sqlite import csv_mode
-from .validation import db_input_validation
+from csv_sqlite_converter.sqlite_to_csv.transfer_data_from_sqlite_to_csv import db_mode
+from csv_sqlite_converter.csv_to_sqlite.transfer_data_from_csv_to_sqlite import csv_mode
+from csv_sqlite_converter.validation import db_input_validation
 
 
 def main() -> None:

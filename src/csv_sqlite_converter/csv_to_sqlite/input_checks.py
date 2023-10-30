@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from . import transfer_data_from_csv_to_sqlite
-from ..validation import db_input_validation
+from csv_sqlite_converter.csv_to_sqlite import transfer_data_from_csv_to_sqlite
+from csv_sqlite_converter.validation import db_input_validation
 
 
 def check_input_and_insert_into_db(database_path: Path, csv_file: Path) -> str:

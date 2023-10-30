@@ -10,17 +10,20 @@ Classifier: Programming Language :: Python
 Classifier: Programming Language :: Python :: 3
 Requires-Python: >=3.10
 Description-Content-Type: text/markdown
-Provides-Extra: build
-Provides-Extra: dev
 License-File: LICENSE.txt
+Provides-Extra: build
+Requires-Dist: build; extra == "build"
+Requires-Dist: twine; extra == "build"
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
 
 # CSV-SQLite Converter
 The CSV-SQLite Convert allows to store data both from SQLite database in csv files and from csv files in a SQLite database.
 
 ## Installation
-You can install CSV-SQLite Converter from PyPi (in the future).
+You can install CSV-SQLite Converter from [PyPi](https://pypi.org/project/csv-sqlite-converter/).
     
-    python -m pip install csv_sqlite_converter
+    python -m pip install csv-sqlite-converter
 
 The converter supports Python 3.10 and higher.
 

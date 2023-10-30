@@ -1,7 +1,7 @@
 from pathlib import Path
 import sqlite3
 
-from ..context_managers.db_manager import SQLite
+from csv_sqlite_converter.context_managers.db_manager import SQLite
 
 
 def table_exists(database_path: Path, table: str) -> bool:
